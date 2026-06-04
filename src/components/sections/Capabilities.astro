@@ -1,0 +1,84 @@
+---
+import Container from "../shared/Container.astro";
+
+const capabilities = [
+    {
+        title: "Audio-Visual",
+        sub: "AV / MOIP",
+        desc: "Solutions from auditoriums and home cinema to advanced Media-over-IP — 4K transmission to any number of displays, managed remotely across multiple meeting rooms, smart classrooms and PA/paging.",
+        icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3" /></svg>`,
+    },
+    {
+        title: "ICT Infrastructure",
+        sub: "Cabling · PABX · Network",
+        desc: "Passive and active IT systems for a complete telecommunication infrastructure — structured cabling, PABX and networking for commercial and residential projects.",
+        icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253" /></svg>`,
+    },
+    {
+        title: "Electrical",
+        sub: "LV Design & Execution",
+        desc: "Full low-voltage design and execution — load schedules, DB details, load and cable calculations for mid-sized and retrofit projects.",
+        icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>`,
+    },
+    {
+        title: "Energy Management",
+        sub: "EMS",
+        desc: "From standalone to complex systems — set energy limits and policies and meet them, reducing waste and running cost across any building type.",
+        icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" /></svg>`,
+    },
+];
+
+const highlights = [
+    "Single point of accountability",
+    "Coordinated cross-system design",
+    "Fewer interfaces, fewer surprises",
+];
+---
+
+<section id="capabilities" class="relative">
+    <Container className="space-y-10">
+        <div class="max-w-3xl">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-8 h-px bg-primary"></span>
+                <span class="text-primary text-sm font-semibold tracking-widest uppercase">The Full Stack</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-heading-1 leading-tight">
+                More <span class="text-primary">Capabilities</span>
+            </h2>
+            <p class="mt-4 text-lg text-heading-3 max-w-2xl">
+                Beyond security and automation, IEWAH delivers the complete low-voltage and infrastructure scope — so one partner can carry a project end to end.
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+            {capabilities.map(cap => (
+                <div class="p-6 rounded-2xl bg-box-bg border border-box-border hover:border-primary/30 transition-colors duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center text-primary flex-shrink-0">
+                            <Fragment set:html={cap.icon} />
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <h3 class="font-semibold text-heading-1">{cap.title}</h3>
+                                <span class="text-xs text-primary font-medium uppercase tracking-wider">{cap.sub}</span>
+                            </div>
+                            <p class="text-sm text-heading-3 leading-relaxed">{cap.desc}</p>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        <div class="p-5 rounded-2xl border border-box-border bg-box-bg/50 flex flex-wrap gap-x-8 gap-y-2">
+            <p class="w-full text-xs tracking-widest uppercase text-heading-3 font-semibold mb-1">One Partner, Whole Project</p>
+            {highlights.map(h => (
+                <div class="flex items-center gap-2 text-heading-3 text-sm">
+                    <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    {h}
+                </div>
+            ))}
+        </div>
+    </Container>
+</section>

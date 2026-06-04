@@ -1,0 +1,57 @@
+---
+import Container from "../shared/Container.astro";
+
+const platforms = [
+    { name: "KNX", sub: "Building Control" },
+    { name: "Helvar", sub: "Lighting" },
+    { name: "Philips Dynalite", sub: "Lighting Control" },
+    { name: "RTI", sub: "Automation" },
+    { name: "DALI-2", sub: "Lighting Protocol" },
+    { name: "BMS / GRMS", sub: "Integration" },
+];
+
+const protocols = ["KNX", "DALI", "Buspro", "DyNet", "Modbus", "BACnet", "IoT / Voice"];
+---
+
+<section id="platforms" class="relative">
+    <Container className="space-y-10">
+        <div class="text-center max-w-3xl mx-auto">
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <span class="w-8 h-px bg-primary"></span>
+                <span class="text-primary text-sm font-semibold tracking-widest uppercase">Our Team</span>
+                <span class="w-8 h-px bg-primary"></span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-heading-1">
+                Certified <span class="text-primary">&amp; Capable</span>
+            </h2>
+        </div>
+
+        <div class="p-6 sm:p-8 rounded-3xl bg-box-bg border border-box-border text-center">
+            <p class="text-lg sm:text-xl text-heading-2 leading-relaxed max-w-3xl mx-auto">
+                A skilled group of engineers, technicians and project managers — certified in automation and security systems, and ready to take ownership of your project from brief to handover.
+            </p>
+            <p class="mt-3 text-xs tracking-widest uppercase text-heading-3 font-semibold">IEWAH Engineering &amp; Delivery Team</p>
+        </div>
+
+        <div class="text-center">
+            <p class="text-xs tracking-widest uppercase text-heading-3 font-semibold mb-6">ISO-Compliant Installations &nbsp;·&nbsp; Vendor-Certified Platforms</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {platforms.map(p => (
+                    <div class="p-5 rounded-2xl bg-box-bg border border-box-border hover:border-primary/30 transition-colors duration-300">
+                        <p class="text-xl font-bold text-heading-1">{p.name}</p>
+                        <p class="text-xs tracking-widest uppercase text-heading-3 font-medium mt-1">{p.sub}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <div class="p-5 rounded-2xl border border-box-border bg-box-bg/50">
+            <p class="text-xs tracking-widest uppercase text-heading-3 font-semibold mb-4 text-center">Protocols We Integrate</p>
+            <div class="flex flex-wrap gap-2 justify-center">
+                {protocols.map(p => (
+                    <span class="px-4 py-1.5 text-sm rounded-full border border-box-border text-heading-3 bg-box-bg font-medium">{p}</span>
+                ))}
+            </div>
+        </div>
+    </Container>
+</section>

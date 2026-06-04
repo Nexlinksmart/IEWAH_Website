@@ -1,0 +1,89 @@
+---
+import Container from "../shared/Container.astro";
+
+const security = [
+    { title: "CCTV", sub: "Surveillance", desc: "High-definition cameras with advanced monitoring and easy, secure remote access from any device." },
+    { title: "Access Control", sub: "ACS", desc: "Secure, customizable systems to manage and audit access for authorized personnel only." },
+    { title: "Gates & Barriers", sub: "Automated Entry", desc: "Gate barriers and sliding gates engineered for efficient, secure entry and exit control." },
+    { title: "Sliding Doors", sub: "Smart Access", desc: "Intelligent door systems combining everyday convenience with robust security features." },
+    { title: "Intercom & Intruder Alarm", sub: "Communication & Detection", desc: "Reliable communication networks and intruder alarm systems tailored for homes and businesses — fully integrable with surveillance and access.", wide: true },
+];
+
+const automation = [
+    { title: "Lighting Control Systems", sub: "LCS", desc: "Energy-efficient, fully customizable lighting with programmable scenes for app or voice control. We integrate DALI, KNX, Buspro and DyNet for residential and commercial projects, with occupancy sensing for guaranteed energy savings." },
+    { title: "Building Management Systems", sub: "BMS", desc: "Centralized control of HVAC, lighting and energy usage, with real-time alerts and analytics for continuously optimized building performance." },
+    { title: "Guest Room Management", sub: "GRMS", desc: "Hospitality-grade systems that redefine luxury while optimizing energy. Scenarios such as Welcome, DND, Clean-My-Room and Away coordinate lighting, curtains and temperature around each guest." },
+    { title: "Home Automation", sub: "Smart Home", desc: "Unified smart-home integration for lighting, climate, security and entertainment — minimalist, intuitive and fully compatible with IoT devices and voice assistants." },
+];
+
+const securityBenefits = ["Enhanced safety & live monitoring", "Scalable for small & large projects", "Integrates with automation"];
+---
+
+<section id="security-automation" class="relative">
+    <Container className="space-y-16">
+        <!-- Security Systems -->
+        <div>
+            <div class="flex items-center gap-3 mb-2">
+                <span class="text-primary text-xs font-semibold tracking-widest uppercase">Protect · Monitor · Control</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-heading-1 mb-3">
+                Security <span class="text-primary">Systems</span>
+            </h2>
+            <p class="text-heading-3 max-w-2xl mb-8">
+                Surveillance and access solutions designed for residential and commercial environments, with the ability to trigger a chain of automated responses from a single event.
+            </p>
+            <div class="grid sm:grid-cols-2 gap-4">
+                {security.map(item => (
+                    <div class={`p-5 rounded-2xl bg-box-bg border border-box-border hover:border-primary/25 transition-colors duration-300 ${item.wide ? 'sm:col-span-2' : ''}`}>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+                            </span>
+                            <div>
+                                <span class="font-semibold text-heading-1 text-sm">{item.title}</span>
+                                <span class="ml-2 text-xs text-primary font-medium uppercase tracking-wider">{item.sub}</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-heading-3 leading-relaxed mt-1">{item.desc}</p>
+                    </div>
+                ))}
+            </div>
+            <div class="mt-5 p-4 rounded-xl border border-box-border bg-box-bg/50 flex flex-wrap gap-x-8 gap-y-2">
+                <p class="w-full text-xs tracking-widest uppercase text-heading-3 font-semibold mb-1">Key Benefits</p>
+                {securityBenefits.map(b => (
+                    <div class="flex items-center gap-2 text-heading-3 text-sm">
+                        <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        {b}
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <!-- Automation -->
+        <div>
+            <div class="flex items-center gap-3 mb-2">
+                <span class="text-primary text-xs font-semibold tracking-widest uppercase">Comfort · Efficiency · Control</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-heading-1 mb-3">
+                <span class="text-primary">Automation</span>
+            </h2>
+            <p class="text-heading-3 max-w-2xl mb-8">
+                Intelligent control of light, climate and energy — programmable scenes, real-time analytics and full compatibility with IoT devices and voice assistants.
+            </p>
+            <div class="space-y-4">
+                {automation.map(item => (
+                    <div class="p-5 sm:p-6 rounded-2xl bg-box-bg border border-box-border hover:border-primary/25 transition-colors duration-300">
+                        <div class="flex items-center gap-2 mb-2">
+                            <h3 class="font-semibold text-heading-1">{item.title}</h3>
+                            <span class="text-xs text-primary font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full border border-primary/30 bg-primary/10">{item.sub}</span>
+                        </div>
+                        <p class="text-sm text-heading-3 leading-relaxed">{item.desc}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </Container>
+</section>

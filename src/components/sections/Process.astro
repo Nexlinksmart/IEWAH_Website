@@ -1,0 +1,67 @@
+---
+import Container from "../shared/Container.astro";
+
+const steps = [
+    {
+        number: "1",
+        title: "Consultation",
+        desc: "We start by understanding your needs, goals and constraints — so the solution is tailored to you, not forced from a template.",
+        icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg>`,
+    },
+    {
+        number: "2",
+        title: "Design & Planning",
+        desc: "Customized layouts, schematics and system selection engineered for seamless integration and clean, future-proof delivery.",
+        icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" /></svg>`,
+    },
+    {
+        number: "3",
+        title: "Implementation",
+        desc: "Expert installation, configuration and commissioning to ensure every system runs smoothly from day one.",
+        icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" /></svg>`,
+    },
+    {
+        number: "4",
+        title: "Support & Maintenance",
+        desc: "Ongoing support and maintenance contracts to keep systems efficient — with round-the-clock assistance when it matters.",
+        icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" /></svg>`,
+    },
+];
+---
+
+<section id="process" class="relative">
+    <Container className="space-y-10">
+        <div class="max-w-3xl">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-8 h-px bg-primary"></span>
+                <span class="text-primary text-sm font-semibold tracking-widest uppercase">From Brief to Handover</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-heading-1 leading-tight">
+                How We <span class="text-primary">Work</span>
+            </h2>
+            <p class="mt-4 text-lg text-heading-3 max-w-2xl">
+                A disciplined, four-stage approach that keeps every project clear, accountable and on time — with value engineering at every step.
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+            {steps.map(step => (
+                <div class="p-6 rounded-2xl bg-box-bg border border-box-border hover:border-primary/30 transition-colors duration-300 relative overflow-hidden">
+                    <div class="absolute top-4 right-5 text-5xl font-bold text-heading-3/10 select-none">{step.number}</div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white font-bold text-sm">
+                            {step.number}
+                        </div>
+                    </div>
+                    <div class="mb-1 flex items-center gap-3">
+                        <span class="text-primary">
+                            <Fragment set:html={step.icon} />
+                        </span>
+                        <h3 class="font-semibold text-heading-1 text-lg">{step.title}</h3>
+                    </div>
+                    <p class="text-heading-3 text-sm leading-relaxed mt-2">{step.desc}</p>
+                </div>
+            ))}
+        </div>
+    </Container>
+</section>
