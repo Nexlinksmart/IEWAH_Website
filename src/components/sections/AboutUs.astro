@@ -1,101 +1,48 @@
 ---
+import Info from "../cards/Info.astro";
 import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
-
-const glance = [
-    { label: "Headquarters", value: "United Arab Emirates" },
-    { label: "Coverage", value: "Abu Dhabi · Dubai · GCC" },
-    { label: "Sectors", value: "Residential · Commercial · Hospitality" },
-    { label: "Standards", value: "ISO-compliant installations" },
-];
+import Title from "../shared/Title.astro";
 ---
 
-<section id="about" class="relative">
-    <Container className="flex flex-col midmd:flex-row gap-12 lg:gap-16">
-        <!-- Left: Text content -->
-        <div class="flex-1 flex flex-col midmd:w-7/12">
-            <div class="flex items-center gap-3 mb-4">
-                <span class="w-8 h-px bg-primary"></span>
-                <span class="text-primary text-sm font-semibold tracking-widest uppercase">Who We Are</span>
+<section id="about-us">
+    <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12">
+        <div class="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto">
+            <div class="w-full h-80 sm:h-96 midmd:h-full relative">
+                <div class="absolute rotate-45 -left-5 md:-left-10 lg:-left-20 xl:-left-24 p-1 top-1/2 w-16 h-16 bg-gradient-to-br from-primary to-pink-400 blur-3xl opacity-50"></div>
+                <div class="absolute p-1 -top-4 md:-top-10 right-0 w-20 h-20 bg-gradient-to-br from-primary to-pink-400 rounded-full blur-3xl opacity-60"></div>
+                <span class="absolute w-full aspect-[16/5] -skew-x-12 rounded-full bg-gradient-to-tr from-primary to-pink-400 opacity-40 blur-2xl left-0 bottom-0"></span>
+                <img src={"/images/dev-with-c-1.webp"} alt="IEWAH Smart Building"
+                width="1240" height="1385"
+                class="w-auto left-1/2 -translate-x-1/2 absolute bottom-0 max-h-full" />
             </div>
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-heading-1 leading-tight">
-                About <span class="text-primary">IEWAH</span>
-            </h2>
-
-            <Paragraph className="mt-6">
-                IEWAH Technical Services is a UAE-based <strong class="text-heading-1 font-semibold">home automation and smart-building solution provider</strong>, delivering integrated electrical works, intelligent automation and security across Abu Dhabi and Dubai. From luxury villas to hospitality and commercial spaces, we turn buildings into connected, comfortable and energy-efficient environments — covering lighting, climate, security and full home automation.
+        </div>
+        <div class="flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
+            <Title>
+                UAE-Based Smart Building &amp; Home Automation Experts
+            </Title>
+            <Paragraph className="mt-8">
+                IEWAH Technical Services delivers integrated electrical works, intelligent automation and security across Abu Dhabi and Dubai. From luxury villas to hospitality and commercial spaces, we turn buildings into connected, comfortable and energy-efficient environments — covering lighting, climate, security and full home automation.
             </Paragraph>
             <Paragraph className="mt-4">
-                With technology at our fingertips, we believe projects should never be done the hard way. We apply years of cross-vertical experience to deliver every project hassle-free — consulting and value-engineering each client individually rather than forcing a single solution onto every site.
+                The result is work that is minimalist in nature, functional in essence and aesthetically pleasing — built to perform in the demanding climate and standards of the Gulf.
             </Paragraph>
-            <Paragraph className="mt-4">
-                The result is work that is <strong class="text-heading-1 font-semibold">minimalist in nature, functional in essence and aesthetically pleasing</strong> — built to perform in the demanding climate and standards of the Gulf.
-            </Paragraph>
-
-            <!-- Vision & Mission -->
-            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="p-5 rounded-2xl bg-box-bg border border-box-border">
-                    <div class="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center mb-3">
-                        <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+            <div class="pt-8 grid grid-cols-2 items-center gap-4 max-w-3xl md:max-w-[none]">
+                <Info description="To transform homes and businesses into secure, smart and energy-efficient environments where technology works quietly in the background." title="Our Vision">
+                    <span slot="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
-                    </div>
-                    <h3 class="font-semibold text-heading-1 mb-2">Our Vision</h3>
-                    <p class="text-sm text-heading-3 leading-relaxed">To transform homes and businesses into secure, smart and energy-efficient environments — where technology works quietly and reliably in the background.</p>
-                </div>
-                <div class="p-5 rounded-2xl bg-box-bg border border-box-border">
-                    <div class="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center mb-3">
-                        <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                    </span>
+                </Info>
+                <Info description="To deliver customized, optimized solutions through the highest standards of consultation and value engineering — enhancing safety, comfort and efficiency for every client." title="Our Mission">
+                    <span slot="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
                         </svg>
-                    </div>
-                    <h3 class="font-semibold text-heading-1 mb-2">Our Mission</h3>
-                    <p class="text-sm text-heading-3 leading-relaxed">To thrive by delivering customized, optimized solutions through the highest standards of consultation and value engineering — enhancing safety, comfort and efficiency for every client.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Right: At a Glance card -->
-        <div class="flex-1 midmd:w-5/12 flex flex-col gap-4">
-            <div class="p-6 sm:p-8 rounded-3xl bg-box-bg border border-box-border h-full">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="w-5 h-px bg-primary"></span>
-                    <span class="text-primary text-xs font-semibold tracking-widest uppercase">At a Glance</span>
-                </div>
-                <div class="space-y-5">
-                    {glance.map(item => (
-                        <div>
-                            <p class="text-xs tracking-widest uppercase text-heading-3 font-medium mb-1">{item.label}</p>
-                            <p class="font-semibold text-heading-1">{item.value}</p>
-                        </div>
-                    ))}
-                </div>
-
-                <!-- Divider -->
-                <div class="my-6 border-t border-box-border"></div>
-
-                <!-- Contact snippet -->
-                <div class="space-y-2 text-sm text-heading-3">
-                    <div class="flex items-center gap-2">
-                        <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                        </svg>
-                        <span>+971 4 320 4228</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                        </svg>
-                        <span>info@iewah.com</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253" />
-                        </svg>
-                        <a href="https://www.iewah.com" target="_blank" class="hover:text-primary transition-colors">www.iewah.com</a>
-                    </div>
-                </div>
+                    </span>
+                </Info>
             </div>
         </div>
     </Container>

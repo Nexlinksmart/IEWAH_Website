@@ -1,88 +1,46 @@
 ---
 import Container from "../shared/Container.astro";
-
-const security = [
-    { title: "CCTV", sub: "Surveillance", desc: "High-definition cameras with advanced monitoring and easy, secure remote access from any device." },
-    { title: "Access Control", sub: "ACS", desc: "Secure, customizable systems to manage and audit access for authorized personnel only." },
-    { title: "Gates & Barriers", sub: "Automated Entry", desc: "Gate barriers and sliding gates engineered for efficient, secure entry and exit control." },
-    { title: "Sliding Doors", sub: "Smart Access", desc: "Intelligent door systems combining everyday convenience with robust security features." },
-    { title: "Intercom & Intruder Alarm", sub: "Communication & Detection", desc: "Reliable communication networks and intruder alarm systems tailored for homes and businesses — fully integrable with surveillance and access.", wide: true },
-];
-
-const automation = [
-    { title: "Lighting Control Systems", sub: "LCS", desc: "Energy-efficient, fully customizable lighting with programmable scenes for app or voice control. We integrate DALI, KNX, Buspro and DyNet for residential and commercial projects, with occupancy sensing for guaranteed energy savings." },
-    { title: "Building Management Systems", sub: "BMS", desc: "Centralized control of HVAC, lighting and energy usage, with real-time alerts and analytics for continuously optimized building performance." },
-    { title: "Guest Room Management", sub: "GRMS", desc: "Hospitality-grade systems that redefine luxury while optimizing energy. Scenarios such as Welcome, DND, Clean-My-Room and Away coordinate lighting, curtains and temperature around each guest." },
-    { title: "Home Automation", sub: "Smart Home", desc: "Unified smart-home integration for lighting, climate, security and entertainment — minimalist, intuitive and fully compatible with IoT devices and voice assistants." },
-];
-
-const securityBenefits = ["Enhanced safety & live monitoring", "Scalable for small & large projects", "Integrates with automation"];
+import Paragraph from "../shared/Paragraph.astro";
+import Title from "../shared/Title.astro";
 ---
 
-<section id="security-automation" class="relative">
-    <Container className="space-y-16">
-        <!-- Security Systems -->
-        <div>
-            <div class="flex items-center gap-3 mb-2">
-                <span class="text-primary text-xs font-semibold tracking-widest uppercase">Protect · Monitor · Control</span>
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-bold text-heading-1 mb-3">
-                Security <span class="text-primary">Systems</span>
-            </h2>
-            <p class="text-heading-3 max-w-2xl mb-8">
-                Surveillance and access solutions designed for residential and commercial environments, with the ability to trigger a chain of automated responses from a single event.
-            </p>
-            <div class="grid sm:grid-cols-2 gap-4">
-                {security.map(item => (
-                    <div class={`p-5 rounded-2xl bg-box-bg border border-box-border hover:border-primary/25 transition-colors duration-300 ${item.wide ? 'sm:col-span-2' : ''}`}>
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center">
-                                <svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
-                            </span>
-                            <div>
-                                <span class="font-semibold text-heading-1 text-sm">{item.title}</span>
-                                <span class="ml-2 text-xs text-primary font-medium uppercase tracking-wider">{item.sub}</span>
-                            </div>
-                        </div>
-                        <p class="text-sm text-heading-3 leading-relaxed mt-1">{item.desc}</p>
-                    </div>
-                ))}
-            </div>
-            <div class="mt-5 p-4 rounded-xl border border-box-border bg-box-bg/50 flex flex-wrap gap-x-8 gap-y-2">
-                <p class="w-full text-xs tracking-widest uppercase text-heading-3 font-semibold mb-1">Key Benefits</p>
-                {securityBenefits.map(b => (
-                    <div class="flex items-center gap-2 text-heading-3 text-sm">
-                        <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
-                        {b}
-                    </div>
-                ))}
-            </div>
+<section id="features">
+    <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12">
+
+        <div class="flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
+            <Title>
+                A Complete Low-Voltage &amp; Infrastructure Partner
+            </Title>
+            <Paragraph className="mt-8">
+                Beyond security and automation, IEWAH delivers the full scope — so one partner can carry your project from brief to handover.
+            </Paragraph>
+            <Paragraph className="mt-2">
+                Every discipline is coordinated under one roof, meaning fewer interfaces, fewer surprises and a single point of accountability.
+            </Paragraph>
+            <ul class="mt-8 space-y-4 text-heading-3 font-medium">
+                <li>
+                    <span class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> Audio-Visual &amp; Media over IP
+                </li>
+                <li>
+                    <span class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> ICT Infrastructure — Cabling, PABX &amp; Network
+                </li>
+                <li>
+                    <span class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> Electrical — LV Design &amp; Execution
+                </li>
+                <li>
+                    <span class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> Energy Management Systems (EMS)
+                </li>
+            </ul>
         </div>
 
-        <!-- Automation -->
-        <div>
-            <div class="flex items-center gap-3 mb-2">
-                <span class="text-primary text-xs font-semibold tracking-widest uppercase">Comfort · Efficiency · Control</span>
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-bold text-heading-1 mb-3">
-                <span class="text-primary">Automation</span>
-            </h2>
-            <p class="text-heading-3 max-w-2xl mb-8">
-                Intelligent control of light, climate and energy — programmable scenes, real-time analytics and full compatibility with IoT devices and voice assistants.
-            </p>
-            <div class="space-y-4">
-                {automation.map(item => (
-                    <div class="p-5 sm:p-6 rounded-2xl bg-box-bg border border-box-border hover:border-primary/25 transition-colors duration-300">
-                        <div class="flex items-center gap-2 mb-2">
-                            <h3 class="font-semibold text-heading-1">{item.title}</h3>
-                            <span class="text-xs text-primary font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full border border-primary/30 bg-primary/10">{item.sub}</span>
-                        </div>
-                        <p class="text-sm text-heading-3 leading-relaxed">{item.desc}</p>
-                    </div>
-                ))}
+        <div class="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto">
+            <div class="w-full h-80 sm:h-96 midmd:h-full relative">
+                <div class="absolute rotate-45 -left-5 md:-left-10 lg:-left-20 xl:-left-24 p-1 top-1/2 w-16 h-16 bg-gradient-to-br from-primary to-pink-400 blur-3xl opacity-50"></div>
+                <div class="absolute p-1 -top-4 md:-top-10 right-0 w-20 h-20 bg-gradient-to-br from-primary to-pink-400 rounded-full blur-3xl opacity-60"></div>
+                <span class="absolute w-full aspect-[16/5] -skew-x-12 rounded-full bg-gradient-to-tr from-primary to-pink-400 opacity-40 blur-2xl left-0 bottom-0"></span>
+                <img src={"/images/dev-with-c.webp"} alt="IEWAH Capabilities"
+                width="1240" height="1385"
+                class="w-auto left-1/2 -translate-x-1/2 absolute bottom-0 max-h-full" />
             </div>
         </div>
     </Container>
