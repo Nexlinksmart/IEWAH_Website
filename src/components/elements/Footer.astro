@@ -4,6 +4,7 @@ import Container from "../shared/Container.astro";
 import FooterNav from "../shared/FooterNav.astro";
 import Paragraph from "../shared/Paragraph.astro";
 
+
 const footerServices = [
     { itemText: "Security Systems", itemLink: "#services" },
     { itemText: "Automation", itemLink: "#services" },
@@ -11,24 +12,6 @@ const footerServices = [
     { itemText: "Building Management", itemLink: "#services" },
 ]
 
-const footerCompany = [
-    { itemText: "About Us", itemLink: "#about-us" },
-    { itemText: "How We Work", itemLink: "#cta" },
-    { itemText: "Sectors", itemLink: "#cta" },
-    { itemText: "Contact", itemLink: "#cta" },
-]
-
-const footerSupport = [
-    { itemText: "Get a Quote", itemLink: "#cta" },
-    { itemText: "FAQ", itemLink: "#" },
-    { itemText: "Maintenance", itemLink: "#cta" },
-    { itemText: "Contact", itemLink: "#cta" },
-]
-
-const footerLegal = [
-    { itemText: "Privacy", itemLink: "#" },
-    { itemText: "Terms", itemLink: "#" },
-]
 ---
 <div class="mt-16"></div>
 <footer class="relative bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 dark:to-transparent pt-28 rounded-t-3xl">
@@ -48,8 +31,8 @@ const footerLegal = [
     </div>
     <Container className="pb-8 relative overflow-auto">
         <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 blur-2xl opacity-20 w-24 h-16 sm:w-48 sm:h-36 rounded-full rotate-12 skew-x-6 bg-primary"></span>
-        <div class="grid grid-cols-2 lg:grid-cols-3 lg:items-stretch gap-8 relative">
-            <div class="col-span-2 lg:col-span-1 h-auto flex flex-col">
+        <div class="grid grid-cols-1 lg:grid-cols-3 lg:items-start gap-10 relative">
+            <div class="lg:col-span-1 h-auto flex flex-col">
                 <div class="h-full">
                     <a href="/" class="relative flex items-center gap-2">
                         <div class="flex flex-col leading-none">
@@ -64,7 +47,7 @@ const footerLegal = [
                         </div>
                     </a>
                     <Paragraph className={"mt-8"}>
-                        Integrated Electrical Works &amp; Home Automation — transforming spaces across Abu Dhabi, Dubai and the GCC into connected, intelligent environments.
+                        Integrated Electrical Works &amp; Home Automation, transforming spaces across Abu Dhabi, Dubai and the GCC into connected, intelligent environments.
                     </Paragraph>
                 </div>
 
@@ -97,15 +80,19 @@ const footerLegal = [
                 </div>
             </div>
 
-            <GroupFooterNav>
+            <div class="lg:col-span-2 grid grid-cols-2 gap-8">
                 <FooterNav title={"Services"} navItems={footerServices}/>
-                <FooterNav title={"Company"} navItems={footerCompany}/>
-            </GroupFooterNav>
-
-            <GroupFooterNav>
-                <FooterNav title={"Support"} navItems={footerSupport}/>
-                <FooterNav title={"Legal"} navItems={footerLegal}/>
-            </GroupFooterNav>
+                <nav class="space-y-6">
+                    <h2 class="font-semibold text-heading-1 text-xl">Support</h2>
+                    <ul class="space-y-3 font-medium md:text-lg text-heading-3">
+                        <li>
+                            <button id="footer-chat-btn" class="transition hover:text-primary flex items-center gap-2 text-left">
+                                Get a Quote
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </Container>
     <div class="bg-gradient-to-tl from-box-bg py-2 relative">
@@ -125,4 +112,8 @@ const footerLegal = [
 <script>
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = new Date().getFullYear().toString();
+
+    document.getElementById("footer-chat-btn")?.addEventListener("click", () => {
+        document.getElementById("chat-btn")?.click();
+    });
 </script>

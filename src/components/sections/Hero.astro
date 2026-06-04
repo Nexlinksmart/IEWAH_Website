@@ -21,12 +21,17 @@ import ByNumber from "./ByNumber.astro";
              Smart Homes, <span class="text-transparent bg-clip-text bg-gradient-to-br from-primary from-20% via-primary via-30% to-pink-400">Intelligently Connected.</span>
             </h1>
             <Paragraph className="mt-8">
-                Integrated Electrical Works &amp; Home Automation — delivering security, lighting, climate control and full building management across Abu Dhabi and Dubai.
+                Integrated Electrical Works &amp; Home Automation, delivering security, lighting, climate control and full building management across Abu Dhabi and Dubai.
             </Paragraph>
             <div class="mt-10 w-full flex max-w-md mx-auto lg:mx-0">
                 <div class="flex sm:flex-row flex-col gap-5 w-full">
-                    <BtnLink text="Request a Consultation" href="#cta" variant="primary" className="flex justify-center w-full sm:w-max text-white"/>
-                    <BtnLink text="Our Services" href="#services" variant="secondary" className="flex justify-center w-full sm:w-max"/>
+                    <button id="hero-chat-btn" class="px-6 py-3 rounded-full bg-primary border border-transparent text-white font-medium flex justify-center items-center gap-2 w-full sm:w-max hover:opacity-90 hover:scale-105 active:scale-95 transition-all duration-200">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+                        </svg>
+                        Chat with us
+                    </button>
+                    <BtnLink text="Our Services" href="#services" variant="secondary" className="flex justify-center w-full sm:w-max hover:scale-105 active:scale-95 transition-all duration-200"/>
                 </div>
             </div>
         </div>
@@ -38,3 +43,9 @@ import ByNumber from "./ByNumber.astro";
 
     <ByNumber/>
 </section>
+
+<script>
+    document.getElementById("hero-chat-btn")?.addEventListener("click", () => {
+        document.getElementById("chat-btn")?.click();
+    });
+</script>
