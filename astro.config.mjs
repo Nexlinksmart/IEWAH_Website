@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: 'https://nexlinksmart.github.io',
-  base: '/IEWAH_Website',
+  base: process.env.GITHUB_ACTIONS ? '/IEWAH_Website' : '/',
   vite: {
     plugins: [tailwindcss()],
   },
